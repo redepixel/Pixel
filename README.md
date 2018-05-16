@@ -2,6 +2,8 @@
 # Pixel
 Rede social feita para designers e mangakás.
 
+[Demo Online](http://179.252.243.88:888/)
+
 Visualização Prévia:
 
 ![alt text](https://raw.githubusercontent.com/kaway404/Pixel/master/preview/1.png)
