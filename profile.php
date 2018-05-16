@@ -310,6 +310,8 @@ echo '<script>location.href="/";</script>';
             <li><a id="get" href="/editprofile" uk-tooltip="Adiciona uma foto de perfil ou de capa ou de background.">Editar perfil</a></li>
             <?php } ?>
             <hr>
+            <li><a href="/profile.php?id=<?php echo $people['id'];?>" id="linksn">Feed</a></li>
+            <hr>
             <li><a href="#" id="linksn">Seguindo</a></li>
             <li><a href="#" id="linksn">Seguidores</a></li>
             <hr>
