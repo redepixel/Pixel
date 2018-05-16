@@ -1,6 +1,6 @@
+![alt text](https://i.imgur.com/nVRrINb.png)
 # Pixel
 * Rede social feita para designers e mangakás.
-![alt text](https://i.imgur.com/nVRrINb.png)
 
 Visualização Prévia:
 
