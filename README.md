@@ -1,5 +1,5 @@
 # Pixel
-![alt text](https://i.imgur.com/ATnHC13.png)
+![alt text](https://i.imgur.com/nVRrINb.png)
 Rede social feita para designers e mangakás.
 
 Visualização Prévia:
