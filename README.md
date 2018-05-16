@@ -1,4 +1,5 @@
 # Pixel
+![alt text](https://i.imgur.com/ATnHC13.png)
 Rede social feita para designers e mangakás.
 
 Visualização Prévia:
@@ -10,12 +11,12 @@ Visualização Prévia:
 =======
 # Como usar:
 
-1° Clique no botão verde e depois clique em download.
-2° Abra o arquivo zipado e dê CTRL + A e depois, arraste todos os arquivos até o local de preferência.
+* Clique no botão verde e depois clique em download.
+* Abra o arquivo zipado e dê CTRL + A e depois, arraste todos os arquivos até o local de preferência.
 
 # Como contribuir
 
-1° Faça um pull request.
-2° Após, receber push. Você poderá contribuir.
+* Faça um pull request.
+* Após, receber push. Você poderá contribuir.
 
-# Use cuidado e sem plágios.
+# Licença MIT
