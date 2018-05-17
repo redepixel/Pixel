@@ -25,8 +25,6 @@
             <li><a href="/profile.php?id=<?php echo $user['id'];?>" id="linksn">Meu perfil</a></li>
             <li><a href="#" id="linksn">Seguindo</a></li>
             <li><a href="#" id="linksn">Seguidores</a></li>
-            <hr>
-            <li><a href="#" id="linksn">Configurações</a></li>
         </div>
     </div>
 
