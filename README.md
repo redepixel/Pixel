@@ -1,14 +1,24 @@
-<<<<<<< HEAD
+![alt text](https://i.imgur.com/nVRrINb.png)
 # Pixel
-Social Network for mangaka
+Rede social feita para designers e mangakás.
 
-Preview
+[Demo Online](http://179.252.243.88:888/)
+
+Visualização Prévia:
 
 ![alt text](https://raw.githubusercontent.com/kaway404/Pixel/master/preview/1.png)
 ![alt text](https://raw.githubusercontent.com/kaway404/Pixel/master/preview/2.png)
 ![alt text](https://raw.githubusercontent.com/kaway404/Pixel/master/preview/3.png)
 ![alt text](https://raw.githubusercontent.com/kaway404/Pixel/master/preview/4.png)
 =======
-# Pixel - Rede social Open Source
-Pixel social network for designer and mangaka
->>>>>>> 164ad4049f45099b6b998016955a62fb26ac11db
+# Como usar:
+
+* Clique no botão verde e depois clique em download.
+* Abra o arquivo zipado e dê CTRL + A e depois, arraste todos os arquivos até o local de preferência.
+
+# Como contribuir
+
+* Faça um pull request.
+* Após, receber push. Você poderá contribuir.
+
+# Licença MIT
