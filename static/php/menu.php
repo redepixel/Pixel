@@ -1,5 +1,6 @@
 <div class="uk-flex uk-flex-center">
 <div class="main">
+
     <div class="uk-flex uk-flex-left">
         <div class="status-p uk-animation-slide-top-medium">
             <a href="/profile.php?id=<?php echo $user['id'];?>"><li><img src="/img/avatar/<?php echo $user['photo'];?>" class="wtf">
@@ -28,6 +29,106 @@
             <li><a href="#" id="linksn">Configurações</a></li>
         </div>
     </div>
+
+<div class="uk-flex uk-flex-left">
+  <?php
+                $eu = $user['id'];
+                $peoples = DBRead( 'user', "WHERE id <> $eu ORDER BY id DESC LIMIT 1" );
+                if (!$peoples)
+                echo '';    
+                else  
+                    foreach ($peoples as $people):
+                ?>
+             <div class="newss uk-animation-slide-top-medium" id="nts">
+                <p>Sugestão de usuarios</p>
+                <div class="uk-position-relative uk-visible-toggle uk-light" style="height: 50px;" uk-slider>
+
+         <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m">
+            <?php
+                $eu = $user['id'];
+                $peoples = DBRead( 'user', "WHERE id <> $eu ORDER BY id DESC" );
+                if (!$peoples)
+                echo '';    
+                else  
+                    foreach ($peoples as $people):   
+                ?>
+                  <a class="nani" href="/profile.php?id=<?php echo $people['id'];?>" title="<?php echo $people['nome'];?>" uk-tooltip="<?php echo $people['nome'];?> <?php echo $people['sobrenome'];?>">
+                <li class="user-s">
+                    <img src="/img/avatar/<?php echo $people['photo'];?>">
+                </li>
+                </a>
+            <?php endforeach;?>
+        </ul>
+
+    <a class="what uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+    <a class="what uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+</div>
+
+
+            </div> 
+        <?php endforeach; ?>
+</div>
+
+
+
+<div class="uk-flex uk-flex-right" style="left: 100px;position: relative;">
+ <?php
+                $desenhos = DBRead( 'desenhos', "WHERE id ORDER BY id DESC LIMIT 1" );
+                if (!$desenhos)
+                echo '';    
+                else  
+                    foreach ($desenhos as $desenho):   
+                ?>
+
+
+            <div class="newsst uk-animation-slide-top-medium" id="nt">
+                <p>Desenhos em altas</p>
+                <div class="uk-position-relative uk-visible-toggle uk-light" uk-slider>
+
+    <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m">
+                <?php
+                $desenhos = DBRead( 'desenhos', "WHERE id ORDER BY id DESC LIMIT 5" );
+                if (!$desenhos)
+                echo '';    
+                else  
+                    foreach ($desenhos as $desenho):   
+                ?>
+                <?php
+                $eu = $desenho['iduser'];
+                $eudesenheis = DBRead( 'user', "WHERE id = $eu ORDER BY id DESC LIMIT 1" );
+                if (!$eudesenheis)
+                echo '';    
+                else  
+                    foreach ($eudesenheis as $eudesenhei):   
+                ?>
+                <?php if(empty($desenho['photo'])){ echo '';}else{?>
+                     <li uk-tooltip="Feito por <?php echo $eudesenhei['nome']; ?> <?php echo $eudesenhei['sobrenome']; ?> <br> <?php echo $desenho['sobre']; ?>  ">
+                    <img src="/img/desenhos/<?php echo $desenho['photo'];?>">
+                    <div id="bottom-news">
+                         <span uk-tooltip="Ver mais" uk-icon="more" style="color: #555; float: right"></span> 
+                    </div>
+                 </li>
+                <?Php }?>
+             <?php endforeach; endforeach;?>
+    </ul>
+
+    <a class="what uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+    <a class="what uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+</div>
+            </div>
+        <?php endforeach;?>
+</div>
+
+<div class="uk-flex uk-flex-right" style="left: 100px;position: relative;">
+            <div class="newsss uk-animation-slide-top-medium">
+                <p>Info</p>
+                <li><a>Nova função</a><span>Novo sistema</span></li>
+                <li><a>Nova função</a><span>Novo layout</span></li>
+            </div>
+</div>
+
 
 <!--      <div class="uk-flex uk-flex-right" style="position: relative; left: 140px;">
         <div class="status-s uk-animation-slide-top-medium">
@@ -143,94 +244,9 @@ echo '<script>location.href="/";</script>';
     <a class="uk-alert-close"></a>
     <p>Seja bem vindo(a) ao mundo dos artistas.</p>
     </div>
-        <div class="news">
-                <p>Info</p>
-                <li><a>Nova função</a><span>sistema de mudar de foto</span></li>
-            </div>
 
-            <?php
-                $desenhos = DBRead( 'desenhos', "WHERE id ORDER BY id DESC LIMIT 1" );
-                if (!$desenhos)
-                echo '';    
-                else  
-                    foreach ($desenhos as $desenho):   
-                ?>
-
-
-            <div class="news uk-animation-slide-top-medium" id="nt">
-                <p>Desenhos em altas</p>
-                <div class="uk-position-relative uk-visible-toggle uk-light" uk-slider>
-
-    <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m">
-                <?php
-                $desenhos = DBRead( 'desenhos', "WHERE id ORDER BY id DESC LIMIT 5" );
-                if (!$desenhos)
-                echo '';    
-                else  
-                    foreach ($desenhos as $desenho):   
-                ?>
-                <?php
-                $eu = $desenho['iduser'];
-                $eudesenheis = DBRead( 'user', "WHERE id = $eu ORDER BY id DESC LIMIT 1" );
-                if (!$eudesenheis)
-                echo '';    
-                else  
-                    foreach ($eudesenheis as $eudesenhei):   
-                ?>
-                <?php if(empty($desenho['photo'])){ echo '';}else{?>
-                     <li uk-tooltip="Feito por <?php echo $eudesenhei['nome']; ?> <?php echo $eudesenhei['sobrenome']; ?> <br> <?php echo $desenho['sobre']; ?>  ">
-                    <img src="/img/desenhos/<?php echo $desenho['photo'];?>">
-                    <div id="bottom-news">
-                         <span uk-tooltip="Ver mais" uk-icon="more" style="color: #555; float: right"></span> 
-                    </div>
-                 </li>
-                <?Php }?>
-             <?php endforeach; endforeach;?>
-    </ul>
-
-    <a class="what uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-    <a class="what uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-
-</div>
-            </div>
-        <?php endforeach;?>
-        <?php
-                $eu = $user['id'];
-                $peoples = DBRead( 'user', "WHERE id <> $eu ORDER BY id DESC LIMIT 1" );
-                if (!$peoples)
-                echo '';    
-                else  
-                    foreach ($peoples as $people):   
-                ?>
-             <div class="news uk-animation-slide-top-medium" id="nt">
-                <p>Sugestão de usuarios</p>
-                <div class="uk-position-relative uk-visible-toggle uk-light" style="height: 50px;" uk-slider>
-
-         <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m">
-            <?php
-                $eu = $user['id'];
-                $peoples = DBRead( 'user', "WHERE id <> $eu ORDER BY id DESC LIMIT 7" );
-                if (!$peoples)
-                echo '';    
-                else  
-                    foreach ($peoples as $people):   
-                ?>
-                  <a class="nani" href="/profile.php?id=<?php echo $people['id'];?>" title="<?php echo $people['nome'];?>" uk-tooltip="<?php echo $people['nome'];?> <?php echo $people['sobrenome'];?>">
-                <li class="user-s">
-                    <img src="/img/avatar/<?php echo $people['photo'];?>">
-                </li>
-                </a>
-            <?php endforeach;?>
-        </ul>
-
-    <a class="what uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-    <a class="what uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-
-</div>
-
-
-            </div> 
-        <?php endforeach; ?>
+           
+      
                             <!-- 
                 <?php
                 $desenhos = DBRead( 'desenhos', "WHERE id and destaque = 1 ORDER BY id DESC LIMIT 1" );
@@ -288,7 +304,7 @@ echo '<script>location.href="/";</script>';
 
 
  <?php
-                $desenhos = DBRead( 'desenhos', "WHERE id ORDER BY id DESC LIMIT 7" );
+                $desenhos = DBRead( 'desenhos', "WHERE id ORDER BY id DESC" );
                 if (!$desenhos)
                 echo '';    
                 else  
@@ -309,11 +325,11 @@ echo '<script>location.href="/";</script>';
   $totalcurtida = mysql_query("SELECT * FROM pixel_like WHERE idpost = $comentiduser ");
   $totalcurtida = mysql_num_rows($totalcurtida);
                                                      ?>
-<div class="newst">
+<div class="newst" <?php if($eudesenhei['admin'] == 1){?> style="background: #ffecd9;"  <?php } ?>>
 <article class="uk-comment">
     <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
         <div class="uk-width-auto">
-            <img uk-tooltip="<?php echo $eudesenhei['nome'];?> <?php echo $eudesenhei['sobrenome'];?>" class="uk-comment-avatar" src="
+            <img uk-tooltip="<?php echo $eudesenhei['nome'];?> <?php echo $eudesenhei['sobrenome'];?><?php if($eudesenhei['admin'] == 1){?> - Admin <?php } ?>" class="uk-comment-avatar" src="
             /img/avatar/<?php echo $eudesenhei['photo'];?>" style="border-radius: 50%; left: 10px; position: relative; top: 10px; height: 50px; width: 50px;" width="50" height="50" alt="">
         </div>
         <div class="uk-width-expand">
@@ -326,13 +342,15 @@ echo '<script>location.href="/";</script>';
                     <p style="padding: 5px;"><?php echo $desenho['sobre'];?></p>
             <?Php }?>
             <?php if(empty($desenho['photo'])){ echo '';}else{?>
+<center>
 <div class="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: scale">
     <div style="width: 100%; max-height: 800px;">
-        <a class="uk-inline" href="img/desenhos/<?php echo $desenho['photo'];?>" data-caption="<?php echo $eudesenhei['nome'];?> <?php echo $eudesenhei['sobrenome'];?> :  <?php echo $desenho['sobre'];?>" style="width: 100%; max-height: 800px;">
-            <img src="img/desenhos/<?php echo $desenho['photo'];?>" style="width: 100%; max-height: 800px;" alt=""/>
+        <a class="uk-inline" href="img/desenhos/<?php echo $desenho['photo'];?>" data-caption="<?php echo $eudesenhei['nome'];?> <?php echo $eudesenhei['sobrenome'];?> :  <?php echo $desenho['sobre'];?>">
+            <img src="img/desenhos/<?php echo $desenho['photo'];?>" style="" alt=""/>
         </a>
     </div>
 </div>
+</center>
             <?Php }?>
           <p class="totallike" id="totallike<?php echo $desenho['id']; ?>"><?php echo $totalcurtida;?> curtiram isso</p>
          <div id="bottom-post">
@@ -347,7 +365,7 @@ else
 ?>
 <a id="like<?php echo $desenho['id']; ?>"><span id="nani<?php echo $desenho['id']; ?>" class="ativo-like" uk-icon="heart"></span></a>
 <?php endforeach; ?>
-                         <span uk-tooltip="Ver mais" uk-icon="more"></span> 
+<span uk-tooltip="Ver mais" uk-icon="more"></span> 
         </div>
     </div>
 </article>
