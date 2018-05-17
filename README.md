@@ -6,10 +6,10 @@ Rede social feita para designers e mangakás.
 
 Visualização Prévia:
 
-![alt text](https://raw.githubusercontent.com/redepixel/Pixel/preview/1.png)
-![alt text](https://raw.githubusercontent.com/redepixel/Pixel/preview/2.png)
-![alt text](https://raw.githubusercontent.com/redepixel/Pixel/preview/3.png)
-![alt text](https://raw.githubusercontent.com/redepixel/Pixel/preview/4.png)
+![alt text](https://raw.githubusercontent.com/redepixel/Pixel/master/preview/1.png)
+![alt text](https://raw.githubusercontent.com/redepixel/Pixel/master/preview/2.png)
+![alt text](https://raw.githubusercontent.com/redepixel/Pixel/master/preview/3.png)
+![alt text](https://raw.githubusercontent.com/redepixel/Pixel/master/preview/4.png)
 =======
 # Como usar:
 
