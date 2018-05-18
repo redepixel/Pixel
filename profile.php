@@ -264,8 +264,24 @@ echo '<script>location.href="/";</script>';
                         <a><button class="uk-button uk-button-primary"><span uk-icon="info"></span>       Atividades</button></a>
                         <a href="/editprofile"><button class="uk-button uk-button-primary"><span uk-icon="pencil"></span>       Editar perfil</button></a>
                     <?php } else{ ?>
+                    <?php
+$conn = mysql_connect($hostp,$userp,$passwrdp) or die (mysql_error);
+$db=mysql_select_db($dbp, $conn) or die (mysql_error);
+?>
+
+                    <?php
+                    $iduser = DBEscape( strip_tags(trim($_COOKIE['iduser']) ) );
+                    $peoplef = DBEscape( strip_tags(trim($_GET['id']) ) );
+                    $peoplefrs = mysql_query("SELECT * FROM pixel_amizades WHERE id and iduser = $iduser and idquem = $peoplef");
+                    $peoplefrs = mysql_num_rows($peoplefrs);
+                    if($peoplefrs <> 0){
+                                        ?>
+                        <button class="uk-button uk-button-primary" id="addf">Parar de seguir</button>
+                        <?php } else{ ?>
                         <button class="uk-button uk-button-primary" id="addf">Seguir</button>
+                        <?php } ?>
                         <button class="uk-button uk-button-primary"><span uk-icon="warning"></span>       Bloquear</button>
+                        <a href="/stream.php?id=02<?php echo $user['id'];?>&what=<?php echo $people['id'];?>"><button class="uk-button uk-button-primary">Chamada conferencia</button></a>
                     <?php } ?>
                     </div>
                 </div>

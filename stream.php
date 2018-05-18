@@ -28,9 +28,12 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
     $idcry = DBEscape( strip_tags(trim($_COOKIE['thecry']) ) );
     $usercry = DBRead('user', "WHERE thecry = '{$idcry}' LIMIT 1 ");
     $usercry = $usercry[0];
-    if($_GET['id']){
+    if(isset($_GET['id']) && isset($_GET['what']) ) {
     $sala = $_GET['id'];
-    $salaid = sha1($sala);
+    $idpeople = DBEscape( strip_tags(trim($_GET['id']) ) );
+    $peopleid = $_GET['what'];
+    $people = DBRead('user', "WHERE id = '{$peopleid}' LIMIT 1 ");
+    $people = $people[0];
     require 'static/php/header.php';
 ?>
 
@@ -79,10 +82,15 @@ function joinCall(){
 
     <script src="https://static.vidyo.io/latest/javascript/VidyoClient/VidyoClient.js?onload=onVidyoClientLoaded"></script>
 
-<div style="position: fixed; top: 115px; width: 100%; background: rgba(0,0,0,.50); z-index: 1000;">
+<div style="position: fixed; top: 115px; width: 100%; height: 100%; background: rgba(0,0,0,.60); z-index: 1000;">
+    <div style="top: 180px; position: relative;">
     <center>
-    <button onclick="joinCall()" class="uk-button uk-button-primary">Entrar na stream</button>
-</center>
+    <img src="/img/avatar/<?php echo $people['photo'];?>" style="width: 200px; height: 200px; border-radius: 50%;">
+    <br><br><br>
+    <button id="entrar" onclick="joinCall()" class="uk-button uk-button-primary">Entrar</button>
+    <p style="color: #fff;">As duas pessoas tem que clicar Entrar</p>
+    </center>
+</div>
 </div>
 
 
