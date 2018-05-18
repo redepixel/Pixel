@@ -4,8 +4,7 @@
     <div class="uk-flex uk-flex-left">
 
 
-<div class="left-bar">
-<div class="status-p uk-animation-slide-top-medium" style="top: 110px; height: 100%;">
+<div class="status-p uk-animation-slide-top-medium">
             <a href="/profile.php?id=<?php echo $user['id'];?>"><li><img src="/img/avatar/<?php echo $user['photo'];?>" class="wtf">
             <span>  <?php
             $nome = $user['nome'] . " " .  $user['sobrenome'];
@@ -30,10 +29,8 @@
             <li><a href="#" id="linksn">Seguidores</a></li>
         </div>
     </div>
-</div>
 
-
-<!-- <div class="uk-flex uk-flex-left">
+<div class="uk-flex uk-flex-left">
   <?php
                 $eu = $user['id'];
                 $peoples = DBRead( 'user', "WHERE id <> $eu ORDER BY id DESC LIMIT 1" );
@@ -73,8 +70,7 @@
         <?php endforeach; ?>
 </div>
 
- -->
-<!-- 
+
 <div class="uk-flex uk-flex-right" style="left: 100px;position: relative;">
  <?php
                 $desenhos = DBRead( 'desenhos', "WHERE id ORDER BY id DESC LIMIT 1" );
@@ -130,7 +126,7 @@
                 <li><a>Nova função</a><span>Novo sistema</span></li>
                 <li><a>Nova função</a><span>Novo layout</span></li>
             </div>
-</div> -->
+</div>
 
 
 <!--      <div class="uk-flex uk-flex-right" style="position: relative; left: 140px;">
