@@ -204,11 +204,10 @@ body{
 }
 
 .feed{
-	width: 490px;
+	width: 500px;
 	height: auto;
 	position: relative;
 	bottom: 20px;
-	left: 50px;
 }
 
 .news{
@@ -622,7 +621,7 @@ body{
 	border: 1px solid #d6dee5;
 	margin-top: 30px;
 	position: fixed;
-	top: 420px;
+	top: 90px;
 }
 
 .newss p{
@@ -744,4 +743,12 @@ body{
 	display: inline-block;
 	color: #258fb8;
 	margin-left: 10px;
+}
+
+.left-bar{
+	width: auto;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	bottom: 0px;
 }

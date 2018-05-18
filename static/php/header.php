@@ -20,16 +20,6 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
     <div class="uk-flex uk-flex-center">
     <div class="header-align">
 
-<div class="uk-flex uk-flex-right">
-<div class="uk-margin" style="position: relative; top: 70px; z-index: 1000; right: 50px;    z-index: 1500;">
-    <form class="uk-search uk-search-default">
-        <a href="" class="uk-search-icon-flip" uk-search-icon></a>
-        <input class="uk-search-input" type="search" placeholder="Pesquise...">
-    </form>
-</div>
-
-</div>
-
         <a href="/" id="logos"><img class="logo-div" src="/img/logo/2.png"></a>
     </div>
     </div>
@@ -46,7 +36,6 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
         </div>
 
         </div>
-
 
 
         </div>
