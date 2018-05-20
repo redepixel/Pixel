@@ -261,7 +261,7 @@ echo '<script>location.href="/";</script>';
 
     
 
-<div class="newst uk-animation-slide-top-medium">
+<div class="newst uk-animation-slide-top-medium" style="padding: 0;">
 <?php
 $hora = date("H");
 if($hora >= 0 and $hora <6){
