@@ -82,7 +82,7 @@ function joinCall(){
 
     <script src="https://static.vidyo.io/latest/javascript/VidyoClient/VidyoClient.js?onload=onVidyoClientLoaded"></script>
 
-<div style="position: fixed; top: 115px; width: 100%; height: 100%; background: rgba(0,0,0,.60); z-index: 1000;">
+<div style="position: fixed; top: 49px; width: 100%; height: 100%; background: rgba(0,0,0,.60); z-index: 1000;">
     <div style="top: 180px; position: relative;">
     <center>
     <img src="/img/avatar/<?php echo $people['photo'];?>" style="width: 200px; height: 200px; border-radius: 50%;">
