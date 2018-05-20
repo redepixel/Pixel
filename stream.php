@@ -46,7 +46,7 @@ var vidyoConnector;
          VC.CreateVidyoConnector({
             viewId: "renderer",
             viewStyle: "VIDYO_CONNECTORVIEWSTYLE_Default",
-            remoteParticipants:16,
+            remoteParticipants:2,
             logFileFilter:"error",
             logFileName:"",
             userData:""

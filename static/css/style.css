@@ -1,8 +1,8 @@
 body{
-	background: #e4e7ee !important;
 	font-family: "Helvetica Neue","arial","Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
 	 list-style:none;
     margin: 0px auto;
+    background: #f3f3f3;
 }
 
 .background-fixed{
@@ -65,7 +65,7 @@ body{
 }
 
 .header-align{
-	width: 950px;
+	width: 956px;
 	position: relative;	
 }
 
@@ -107,9 +107,9 @@ body{
 }
 
 .main{
-	width: 950px;
+	width: 956px;
 	height: auto;
-	top: 140px;
+	top: 70px;
 	position: relative;
 	z-index: 200;
 }
@@ -119,7 +119,7 @@ body{
 	background-color: #fff;
     width: 244px;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid #d6dee5;
     padding-bottom: 20px;
     position: fixed;
@@ -127,12 +127,13 @@ body{
 }
 
 .wtf{
-	border-radius: 50%;
+	border-radius: 10px;
 	width: 60px;
 	height: 60px;
 	margin-right: 3px;
 	left: 5px;
 	position: relative;
+	top: 40px;
 }
 
 .wtf::before{
@@ -207,7 +208,7 @@ body{
 	width: 500px;
 	height: auto;
 	position: relative;
-	bottom: 20px;
+	bottom: -30px;
 	left: 50px;
 }
 
@@ -622,7 +623,7 @@ body{
 	border: 1px solid #d6dee5;
 	margin-top: 30px;
 	position: fixed;
-	top: 420px;
+	top: 350px;
 }
 
 .newss p{
@@ -667,7 +668,7 @@ body{
 	border: 1px solid #d6dee5;
 	margin-top: 30px;
 	position: fixed;
-	top: 100px;
+	top: 35px;
 }
 
 .newsst p{
@@ -712,7 +713,7 @@ body{
 	border: 1px solid #d6dee5;
 	margin-top: 30px;
 	position: fixed;
-	top: 300px;
+	top: 230px;
 }
 
 .newsss a{
@@ -752,4 +753,109 @@ body{
 	left: 0;
 	position: fixed;
 	bottom: 0px;
+}
+
+.bakat{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.80);
+	left: 0;
+	top: 0;
+	z-index: 9000000;
+}
+
+.tuturial{
+	width: 300px;
+	height: auto;
+	position: relative;
+	background: #fff;
+	padding: 1px;
+}
+
+.tuturial p{
+	padding: 3px;
+	font-size: 19px;
+}
+
+#tuto1{
+	top: 310px;
+	left: -70px;
+	display: block;
+}
+
+#tuto2{
+	display: none;
+	top: 190px;
+	left: 170px;
+}
+
+#tuto3{
+	display: none;
+	top: 140px;
+	left: 80px;
+	width: 300px;
+}
+
+#header{
+	background: #1e87f0;
+	width: 100%;
+	position: fixed;
+	height: 50px;
+	z-index: 4000;
+}
+
+#header #logos{
+	color: #fff;
+	font-size: 34px;
+	text-align: center;
+}
+
+#header #sair{
+	position: relative;
+	bottom: 37px;
+	color: #fff;
+	font-size: 18px;
+}
+
+#header #sair:hover{
+	text-decoration: none;
+	color: #eee;
+}
+
+.buttons{
+	width: 520px;
+	height: 70px;
+	background: linear-gradient(180deg,#f1f1f1,#f1f1f1 73%,hsla(0,0%,95%,0));
+	position: fixed;
+	top: 50px;
+	z-index: 100000;
+}
+
+.buttons .btn{
+	background: #fff;
+	box-shadow: 0 1px 4px rgba(0,0,0,.15);
+	border-radius: 50%;
+	padding: 8px;
+	position: relative;
+	top: 15px;
+}
+
+.buttons .btn:hover{
+	box-shadow: 0 1px 4px rgba(0,0,0,.45);
+}
+
+.buttons .btns{
+	background: #fff;
+	box-shadow: 0 1px 4px rgba(0,0,0,.15);
+	border-radius: 10px;
+	padding: 8px;
+	position: relative;
+	top: 15px;
+	margin-left: 10px;
+}
+
+.buttons .btns:hover{
+	text-decoration: none;
+	box-shadow: 0 1px 4px rgba(0,0,0,.45);
 }

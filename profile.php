@@ -281,7 +281,7 @@ $db=mysql_select_db($dbp, $conn) or die (mysql_error);
                         <button class="uk-button uk-button-primary" id="addf">Seguir</button>
                         <?php } ?>
                         <button class="uk-button uk-button-primary"><span uk-icon="warning"></span>       Bloquear</button>
-                        <a href="/stream.php?id=02<?php echo $user['id'];?>&what=<?php echo $people['id'];?>"><button class="uk-button uk-button-primary">Chamada conferencia</button></a>
+                        <a href="/stream.php?id=chamada01&what=<?php echo $people['id'];?>"><button class="uk-button uk-button-primary">Chamada conferencia</button></a>
                     <?php } ?>
                     </div>
                 </div>
@@ -307,8 +307,9 @@ $db=mysql_select_db($dbp, $conn) or die (mysql_error);
 
 <div class="uk-flex uk-flex-left">
         <div class="status-p uk-animation-slide-top-medium" style="top: 380px; position: fixed;">
+            <div class="background-a"></div>
             <a><li><img src="/img/avatar/<?php echo $people['photo'];?>" class="wtf">
-            <span>  <?php
+            <span style="color: #fff; top: 40px;">  <?php
             $nome = $people['nome'] . " " .  $people['sobrenome'];
   $str2 = nl2br( $nome );
   $len2 = strlen( $str2 );
@@ -318,6 +319,8 @@ $db=mysql_select_db($dbp, $conn) or die (mysql_error);
   else    
    echo substr( $str2, 0, $max2 ) . '...'?></span>
             </li></a>
+            <br>
+            <br>
             <?php
             if($user['id'] <> $people['id']){
             ?>
@@ -338,6 +341,17 @@ $db=mysql_select_db($dbp, $conn) or die (mysql_error);
         </div>
     </div>
 
+
+<style type="text/css">
+    .background-a{
+        width: 100%;
+        height: 100px;
+        background-image: url("/img/background/<?php echo $user['capa'];?>");
+        position: absolute;
+        border-radius: 10px;
+        background-size: cover;
+    }
+</style>
 
 
 <?php

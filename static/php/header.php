@@ -16,7 +16,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
     $usercry = $usercry[0];
 ?>
 
-<div class="header uk-animation-slide-top-small">
+<!-- <div class="header uk-animation-slide-top-small">
     <div class="uk-flex uk-flex-center">
     <div class="header-align">
 
@@ -40,6 +40,20 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 
         </div>
 
+    </div>
+</div> -->
+
+
+<div id="header">
+ <div class="uk-flex uk-flex-center">
+    <div class="header-align">
+        <center>
+        <a href="/" id="logos">Pixel</a>
+        </center>
+        <div class="uk-flex uk-flex-right">
+            <a href="/logout"  uk-tooltip="Sair da conta" id="sair">Sair <span uk-icon="sign-out"></a>
+        </div>
+    </div>
     </div>
 </div>
 

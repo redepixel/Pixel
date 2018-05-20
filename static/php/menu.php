@@ -4,9 +4,10 @@
     <div class="uk-flex uk-flex-left">
 
 
-<div class="status-p uk-animation-slide-top-medium">
+<div class="status-p uk-animation-slide-top-medium" id="menu">
+            <div class="background-a"></div>
             <a href="/profile.php?id=<?php echo $user['id'];?>"><li><img src="/img/avatar/<?php echo $user['photo'];?>" class="wtf">
-            <span>  <?php
+            <span style="color: #fff; top: 40px;">  <?php
             $nome = $user['nome'] . " " .  $user['sobrenome'];
   $str2 = nl2br( $nome );
   $len2 = strlen( $str2 );
@@ -16,12 +17,8 @@
   else    
    echo substr( $str2, 0, $max2 ) . '...'?></span>
             </li></a>
-            <div id="setar"><span id="setting" uk-tooltip="Configurações" uk-icon="settings"></span></div>
-            <div class="settings-div">
-                <a href="/profile.php?id=<?php echo $user['id'];?>"><li>Meu perfil</li></a>
-                <a href="/editprofile"><li>Alterar design</li>
-                <a href="/logout"><li>Sair</li>
-            </div>
+            <br>
+             <br>
             <li><a href="#sejapremium" id="get" uk-toggle uk-tooltip="Ao ser Premium você tem vantangens!">Seja premium</a></li>
             <hr>
             <li><a href="/profile.php?id=<?php echo $user['id'];?>" id="linksn">Meu perfil</a></li>
@@ -29,6 +26,16 @@
             <li><a href="#" id="linksn">Seguidores</a></li>
         </div>
     </div>
+
+<style type="text/css">
+    .background-a{
+        width: 100%;
+        height: 100px;
+        background-image: url("/img/background/<?php echo $user['capa'];?>");
+        position: absolute;
+         background-size: cover;
+    }
+</style>
 
 <div class="uk-flex uk-flex-left">
   <?php
@@ -236,13 +243,16 @@ echo '<script>location.href="/";</script>';
 }
 ?>
 
+<div class="uk-flex uk-flex-center" style="left: 50px; position: relative;">
+<div class="buttons">
+    <a class="btn" href="/"><span uk-icon="home"></span></a>
+    <a class="btns" uk-tooltip="Publicar uma postagem" href="#publish" uk-toggle><span uk-icon="plus"></span>Nova Postagem</a>
+    <a class="btns" href="/profile.php?id=<?php echo $user['id'];?>" uk-tooltip="Meu perfil" uk-toggle><span uk-icon="user"></span>Meu perfil</a>
+</div>
+</div>
 
     <div class="uk-flex uk-flex-center">
         <div class="feed uk-animation-slide-top-medium">
-    <div class="uk-alert-primary uk-animation-slide-top-medium" uk-alert>
-    <a class="uk-alert-close"></a>
-    <p>Seja bem vindo(a) ao mundo dos artistas.</p>
-    </div>
 
            
       
@@ -300,8 +310,6 @@ echo '<script>location.href="/";</script>';
 
     <?php endforeach; ?>
              -->
-
-
  <?php
                 $desenhos = DBRead( 'desenhos', "WHERE id ORDER BY id DESC" );
                 if (!$desenhos)
@@ -324,7 +332,7 @@ echo '<script>location.href="/";</script>';
   $totalcurtida = mysql_query("SELECT * FROM pixel_like WHERE idpost = $comentiduser ");
   $totalcurtida = mysql_num_rows($totalcurtida);
                                                      ?>
-<div class="newst" <?php if($eudesenhei['admin'] == 1){?> style="background: #ffecd9;"  <?php } ?>>
+<div class="newst">
 <article class="uk-comment">
     <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
         <div class="uk-width-auto">
@@ -397,6 +405,42 @@ else
 
 </div>
 
+<!-- Tuturial -->
+<?php 
+if($user['configurado'] == 0){
+?>
+<!-- <style type="text/css">
+body{
+    overflow: hidden;
+}
+</style>
+
+<center>
+<div class="bakat" id="nanituto">
+
+<div class="tuturial uk-animation-slide-top-medium" id="tuto1">
+    <p>Isso aqui é seu menu da rede social.</p>
+    <button class="uk-button uk-button-primary" id="click1">Continuar</button>
+</div>
+
+<div class="tuturial uk-animation-slide-top-medium" id="tuto2">
+    <p>Isso aqui é os desenhos em destaque.</p>
+    <button class="uk-button uk-button-primary" id="click2">Continuar</button>
+</div>
+
+<div class="tuturial uk-animation-slide-top-medium" id="tuto3">
+    <p>Terminaste o tuturial!</p>
+    <button class="uk-button uk-button-primary" id="click3">Finalizar</button>
+</div>
+
+</div>
+</center>
+
+<script type="text/javascript" src="static/js/pratica.js"></script> -->
+
+<?php } ?>
+
+<!-- End tuturial -->
 
 </div>
 </div>
