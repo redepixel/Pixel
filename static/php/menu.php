@@ -34,6 +34,7 @@
         background-image: url("/img/background/<?php echo $user['capa'];?>");
         position: absolute;
          background-size: cover;
+         border-radius: 10px;
     }
 </style>
 
@@ -409,11 +410,6 @@ else
 <?php 
 if($user['configurado'] == 0){
 ?>
-<!-- <style type="text/css">
-body{
-    overflow: hidden;
-}
-</style>
 
 <center>
 <div class="bakat" id="nanituto">
@@ -436,7 +432,10 @@ body{
 </div>
 </center>
 
-<script type="text/javascript" src="static/js/pratica.js"></script> -->
+
+<div id="finish"></div>
+
+<script type="text/javascript" src="static/js/pratica.js"></script>
 
 <?php } ?>
 

@@ -15,5 +15,6 @@ RewriteRule ^again/?$ /again.php [NC,L]
 RewriteRule ^logoutc/?$ /saida.php [NC,L]
 RewriteRule ^verificar/?$ /verificando.php [NC,L]
 RewriteRule ^editprofile/?$ /edit.php [NC,L]
+RewriteRule ^finish/?$ /static/php/finish.php [NC,L]
 
 </IfModule>

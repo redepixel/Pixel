@@ -859,3 +859,7 @@ body{
 	text-decoration: none;
 	box-shadow: 0 1px 4px rgba(0,0,0,.45);
 }
+
+.uk-lightbox{
+	z-index: 5000000000 !important;
+}
