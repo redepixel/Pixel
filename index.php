@@ -38,11 +38,24 @@ else{
         <h1 id="logo">Pixel</h1>
 
         <hr>
-
         <h1 id="logo"><?php echo $usercry['nome'];?></h1>
+        <div class="background-a"></div>
+        <br>
+        <center>
+        <img class="ui uk-animation-slide-bottom-medium uk-animation" src="/img/avatar/<?php echo $usercry['photo'];?>" style="border-radius: 50%; height: 100px; width: 100px; border: 1.5px solid #fff;">
+        </center>
+
+        <style type="text/css">
+    .background-a{
+        width: 100%;
+        height: 150px;
+        background-image: url("/img/background/<?php echo $usercry['capa'];?>");
+        position: absolute;
+         background-size: cover;
+    }
+</style>
 
         <h1 class="ui uk-animation-slide-bottom-medium uk-animation">Faça o login novamente</h1>
-
         <form>
 
     <div class="uk-margin uk-animation-slide-bottom-medium uk-animation">

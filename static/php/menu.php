@@ -250,6 +250,7 @@ echo '<script>location.href="/";</script>';
     <a class="btn" href="/"><span uk-icon="home"></span></a>
     <a class="btns" uk-tooltip="Publicar uma postagem" href="#publish" uk-toggle><span uk-icon="plus"></span>Nova Postagem</a>
     <a class="btns" href="/profile.php?id=<?php echo $user['id'];?>" uk-tooltip="Meu perfil"><span uk-icon="user"></span>Meu perfil</a>
+    <a class="btns" href="/editprofile" uk-tooltip="Meu perfil"><span uk-icon="pencil"></span>Editar perfil</a>
             </div>
 </div>
 

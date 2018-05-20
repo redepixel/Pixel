@@ -40,32 +40,40 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
 
             <div class="editprofile">
                  <div class="uk-flex uk-flex-left">
-        <div class="status-p uk-animation-slide-top-medium">
+<div class="status-p uk-animation-slide-top-medium" id="menu">
+            <div class="background-a"></div>
             <a href="/profile.php?id=<?php echo $user['id'];?>"><li><img src="/img/avatar/<?php echo $user['photo'];?>" class="wtf">
-            <span>  <?php
+            <span style="color: #fff; top: 40px;">  <?php
             $nome = $user['nome'] . " " .  $user['sobrenome'];
   $str2 = nl2br( $nome );
   $len2 = strlen( $str2 );
-  $max2 = 15;
+  $max2 = 11;
    if( $len2 <= $max2 )
    echo $str2;
   else    
    echo substr( $str2, 0, $max2 ) . '...'?></span>
             </li></a>
-            <div id="setar"><span id="setting" uk-tooltip="Configurações" uk-icon="settings"></span></div>
-            <div class="settings-div">
-                <a href="/profile.php?id=<?php echo $user['id'];?>"><li>Meu perfil</li></a>
-                <a href="/editprofile"><li>Alterar design</li>
-                <a href="/logout"><li>Sair</li>
-            </div>
+            <br>
+             <br>
             <li><a href="#sejapremium" id="get" uk-toggle uk-tooltip="Ao ser Premium você tem vantangens!">Seja premium</a></li>
             <hr>
             <li><a href="/profile.php?id=<?php echo $user['id'];?>" id="linksn">Meu perfil</a></li>
             <li><a href="#" id="linksn">Seguindo</a></li>
             <li><a href="#" id="linksn">Seguidores</a></li>
-            <hr>
-            <li><a href="#" id="linksn">Configurações</a></li>
         </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .background-a{
+        width: 100%;
+        height: 100px;
+        background-image: url("/img/background/<?php echo $user['capa'];?>");
+        position: absolute;
+         background-size: cover;
+         border-radius: 10px;
+    }
+</style>
     </div>
 
 
