@@ -7,17 +7,6 @@ body{
     position: relative;
 }
 
-
-html{
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	background: #d4d6dd;
-	overflow-y: auto;
-	height: 100%;
-	background-image: url(http://wall.rimbuz.com/wp-content/uploads/Dark-Anime-Scenery-Wallpaper-Themes-HD.jpg);
-}
-
 #screen{
 	width: 100%;
 	height: 100%;
