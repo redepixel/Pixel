@@ -111,6 +111,12 @@ if (!$people){
 <div class="overflow"></div>
 <div class="uk-flex uk-flex-center">
 <div class="main">
+
+<div id="headerpeople" class="uk-animation-slide-top-medium">
+    <img src="/img/avatar/<?php echo $people['photo'];?>" style="width: 70px; height: 70px; top: 0px; border-radius: 50%; position: relative; left: 0px">
+    <span><?php echo $people['nome'];?> <?php echo $people['sobrenome'];?></span>
+</div>
+
     <div class="uk-alert-primary uk-animation-slide-top-medium" uk-alert>
     <a class="uk-alert-close"></a>
     <p>Perfil de <?php echo $people['nome'];?> <?php echo $people['sobrenome'];?></p>
@@ -285,7 +291,9 @@ $db=mysql_select_db($dbp, $conn) or die (mysql_error);
                 </div>
             </div>
 
+
 <div id="friend-resposta"></div>
+
 
 <script type="text/javascript">
   $(document).ready(function() {
@@ -526,6 +534,18 @@ else
         background-size: cover;
     }
 </style>
+
+<script>
+var headerstyle = document.getElementById('headerpeople');
+window.onscroll = function(){
+var top = window.pageYOffset || document.documentElement.scrollTop
+if( top > 420 ) {
+headerstyle.style = 'display: block;';
+}else{
+headerstyle.style = 'Display: none;';
+}
+}
+</script>
 
 </body>
 
