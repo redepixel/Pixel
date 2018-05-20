@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pixel</title>
+    <link rel="stylesheet" href="/static/css/uikit.min.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <script src="/static/js/uikit.min.js"></script>
+    <script src="/static/js/uikit-icons.min.js"></script>
+    <script src="static/js/jquery.js" type="text/javascript"></script>
+    <meta charset="utf-8">
+</head>
+<body>
 
 <div class="uk-flex uk-flex-center">
 <div class="main">
@@ -260,98 +272,13 @@ echo '<script>location.href="/";</script>';
         <div class="feed uk-animation-slide-top-medium">
 
     
-
-<div class="newst uk-animation-slide-top-medium" style="padding: 0;">
-<?php
-$hora = date("H");
-if($hora >= 0 and $hora <6){
-?>
-
-<div style="background-image: url(/img/saudacao/noite.png); background-size: cover; height: 100px; width: 100%;">
-    <center><h1 style="color: #fff;padding: 20px">Boa madrugada</h1></center>
-</div>
-<?php } elseif ($hora >= 6 and $hora < 12) {
- ?>
-
-<div style="background-image: url(/img/saudacao/dia.png); background-size: cover; height: 100px; width: 100%;">
-    <center><h1 style="color: #fff;padding: 20px">Bom dia</h1></center>
-</div>
-
-<?php } elseif ($hora>= 12 and $hora < 18) {?>
-
-<div style="background-image: url(/img/saudacao/dia.png); background-size: cover; height: 100px; width: 100%;">
-    <center><h1 style="color: #fff;padding: 20px">Boa tarde</h1></center>
-</div>
-
-<?php } else {?>
-
-<div style="background-image: url(/img/saudacao/noite.png); background-size: cover; height: 100px; width: 100%;">
-    <center><h1 style="color: #fff;padding: 20px">Boa noite</h1></center>
-</div>
-<?php } ?>
-
-</div>
-
-
-      
-                            <!-- 
-                <?php
-                $desenhos = DBRead( 'desenhos', "WHERE id and destaque = 1 ORDER BY id DESC LIMIT 1" );
-                if (!$desenhos)
-                echo '';    
-                else  
-                    foreach ($desenhos as $desenho):   
-                ?>
-                <!-- 
-<div class="news slider">
-<p>Desenhos da equipe</p>
-<div class="uk-position-relative uk-visible-toggle uk-light" style="height: 90px;" uk-slider>
-<div class="uk-child-width-1-3@m" uk-grid uk-lightbox="animation: slide">
-    <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m">
-                <?php
-                $desenhos = DBRead( 'desenhos', "WHERE id and destaque = 1 ORDER BY id DESC LIMIT 7" );
-                if (!$desenhos)
-                echo '';    
-                else  
-                    foreach ($desenhos as $desenho):   
-                ?>
-                <?php
-                $eu = $desenho['iduser'];
-                $eudesenheis = DBRead( 'user', "WHERE id = $eu ORDER BY id DESC LIMIT 1" );
-                if (!$eudesenheis)
-                echo '';    
-                else  
-                    foreach ($eudesenheis as $eudesenhei):   
-                ?>
-    <div id="photoho">
-        <a class="uk-inline" href="/img/desenhos/<?php echo $desenho['photo'];?>" data-caption="Feito por <?php echo $eudesenhei['nome'];?> <?php echo $eudesenhei['sobrenome'];?>">
-            <img src="/img/desenhos/<?php echo $desenho['photo'];?>" alt="">
-        </a>
-    </div>
-
-            <?php endforeach; endforeach?>
-        </ul>
-
-   
-</div>
-
- <a class="what uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
- <a class="what uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-
-
-</div>
-
-
-
-        </div>
-
-
-    <?php endforeach; ?>
-             -->
  <?php
-                $desenhos = DBRead( 'desenhos', "WHERE id ORDER BY id DESC" );
+ $desenhoid = $_GET['id'];
+                $desenhos = DBRead( 'desenhos', "WHERE id = $desenhoid ORDER BY id DESC LIMIT 1" );
                 if (!$desenhos)
-                echo '';    
+                echo '<div class="newst uk-animation-slide-top-medium" style="padding: 0;"><div style="background-image: url(/img/saudacao/404.png);background-size: cover; height: 230px; width: 100%;">
+                        <center><h1 style="color: #fff;padding: 20px">Não encontrado</h1></center>
+                    </div></div>';    
                 else  
                     foreach ($desenhos as $desenho):   
                 ?>
@@ -410,9 +337,45 @@ else
 ?>
 <a id="like<?php echo $desenho['id']; ?>"><span id="nani<?php echo $desenho['id']; ?>" class="ativo-like" uk-icon="heart"></span></a>
 <?php endforeach; ?>
-<a href="/post.php?id=<?php echo $desenho['id']; ?>"><span uk-tooltip="Comentar" uk-icon="comment"></span></a>
         </div>
     </div>
+<hr>
+<div class="comment">
+
+  <div class="space"></div>
+  <div id="flash"></div>
+  <div id="show"></div>
+
+<?php
+$postid = $_GET['id'];
+$coments = DBRead( 'comment', "WHERE id and idpost = $postid ORDER BY id DESC" );
+if (!$coments)
+echo '<p id="feelsba" style="font-size: 18px; padding: 5px;">Não há nenhum comentario</p>';
+else  
+  foreach ($coments as $coment):   
+?>
+<?php
+$comentiduser = $coment['iduser'];
+$peoples = DBRead( 'user', "WHERE id = $comentiduser ORDER BY id DESC LIMIT 1" );
+if (!$peoples)
+echo '';  
+else  
+  foreach ($peoples as $people):   
+?>
+<li>
+   
+    <p><a href="/profile.php?id=<?php echo $people['id'];?>">  <img src="img/avatar/<?php echo $people['photo'];?>" style="width: 30px; height: 30px; border-radius: 50%;" alt=""/> Alexandre Silva </a> - <?php echo $coment['texto'];?></p> 
+</li>
+<?php endforeach; endforeach;?>
+<hr>
+
+<form>
+<input type="text" name="comment" id="comment" placeholder="Comente sobre essa postagem">
+<button class="btnt" id="nanit" style="display: none;">Comentar</button>
+</form>
+
+</div>
+
 </article>
 </div>
 
@@ -430,6 +393,39 @@ else
          return false;
     });
 });
+
+$(function() {
+$("#nanit").click(function() {
+var textcontent = $("#comment").val();
+var dataString = 'content='+ textcontent;
+if(textcontent=='')
+{
+$("#fuck").text("Você não pode deixar o comentario vazio.");
+msg.style = "display: block";
+}
+else
+{
+$.ajax({
+type: "POST",
+url: "static/php/comment.php?idpost=<?php echo $desenho['id']; ?>",
+data: dataString,
+cache: true,
+success: function(html){
+$("#show").after(html);
+document.getElementById('comment').value='';
+$("#flash").hide();
+$("#content").focus();
+}  
+});
+} 
+return false;
+});
+});
+
+ $('#close').click(function(){
+          msg.style = "display: none;";
+       });
+
 </script>
 
 <?php endforeach; endforeach ; ?>
@@ -485,3 +481,6 @@ if($user['configurado'] == 0){
 
 </div>
 </div>
+
+</body>
+</html>

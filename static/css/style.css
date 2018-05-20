@@ -1,6 +1,6 @@
 body{
 	font-family: "Helvetica Neue","arial","Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-	 list-style:none;
+	list-style:none;
     margin: 0px auto;
     background: #f3f3f3;
     z-index: 1000;
@@ -889,4 +889,34 @@ body{
 
 .uk-lightbox{
 	z-index: 5000000000 !important;
+}
+
+.comment{
+	width: 100%;
+	position: relative;
+	height: auto;
+	background: #fff;
+}
+
+.comment input{
+	width: 96%;
+	border: none;
+	height: 30px;
+	padding: 5px;
+	position: relative;
+	top: -5px;
+	border: 1px solid #1e87f0;
+	border-radius: 10px;
+	outline: none !important;
+	font-size: 17px;
+	left: 10px;
+}
+
+.comment li{
+	margin-top: 10px;
+	background: #eee;
+}
+
+.comment li img{
+	position: relative;
 }
