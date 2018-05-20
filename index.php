@@ -42,18 +42,10 @@ else{
         <div class="background-a"></div>
         <br>
         <center>
-        <img class="ui uk-animation-slide-bottom-medium uk-animation" src="/img/avatar/<?php echo $usercry['photo'];?>" style="border-radius: 50%; height: 100px; width: 100px; border: 1.5px solid #fff;">
+        <img class="ui uk-animation-slide-bottom-medium uk-animation" src="/img/avatar/<?php echo $usercry['photo'];?>" style="border-radius: 50%; height: 100px; width: 100px; border: 1.5px solid #fff; top: 50px">
         </center>
-
-        <style type="text/css">
-    .background-a{
-        width: 100%;
-        height: 150px;
-        background-image: url("/img/background/<?php echo $usercry['capa'];?>");
-        position: absolute;
-         background-size: cover;
-    }
-</style>
+        <br>
+        <br>
 
         <h1 class="ui uk-animation-slide-bottom-medium uk-animation">Faça o login novamente</h1>
         <form>
@@ -70,6 +62,15 @@ else{
 <center>
 <a href="/logoutc" style="position: relative;bottom: 30px;" class="uk-animation-slide-bottom-medium uk-animation">Sair</a>
 </center>
+        <style type="text/css">
+    .background-a{
+        width: 100%;
+        height: 150px;
+        background-image: url("/img/background/<?php echo $usercry['capa'];?>");
+        position: absolute;
+         background-size: cover;
+    }
+</style>
 
     <button id="again" class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom uk-animation-slide-bottom-medium uk-animation" style="position: relative; bottom: -10px;">Entrar</button>
 
