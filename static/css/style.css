@@ -3,6 +3,29 @@ body{
 	 list-style:none;
     margin: 0px auto;
     background: #f3f3f3;
+    z-index: 1000;
+    position: relative;
+}
+
+
+html{
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background: #d4d6dd;
+	overflow-y: auto;
+	height: 100%;
+	background-image: url(http://wall.rimbuz.com/wp-content/uploads/Dark-Anime-Scenery-Wallpaper-Themes-HD.jpg);
+}
+
+#screen{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.50);
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 0;
 }
 
 .background-fixed{
@@ -210,6 +233,7 @@ body{
 	position: relative;
 	bottom: -30px;
 	left: 50px;
+	padding-bottom: 50px;
 }
 
 .news{

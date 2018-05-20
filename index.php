@@ -299,14 +299,14 @@ $(document).ready(function() {
 		<form>
 
     <div class="uk-margin uk-animation-slide-bottom-medium uk-animation">
-        <div class="uk-inline">
+        <div class="uk-inline" id="email">
             <span class="uk-form-icon" uk-icon="icon: user"></span>
             <input class="uk-input" id="emaill" placeholder="E-mail" type="text">
         </div>
     </div>
 
     <div class="uk-margin uk-animation-slide-bottom-medium uk-animation">
-        <div class="uk-inline">
+        <div class="uk-inline" id="senha">
             <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
             <input class="uk-input" id="senhal" placeholder="Senha" type="password">
         </div>

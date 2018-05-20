@@ -22,7 +22,10 @@
 	}
 	
 	if(!validaEmail($email)){
-	print "<p>E-mail invalido</p>"; exit();
+	print "<p>E-mail invalido</p>";
+  print "<script>var email = document.getElementById('email');
+    email.classList.add('uk-animation-shake');</script>";
+     exit();
 	}
 
   
@@ -31,7 +34,12 @@
   $res=mysql_fetch_array($resultados);
 
 	if (@mysql_num_rows($resultados) == 0){
-        print "<p>Email ou senha incorretos!</p>"; exit();
+        print "<p>Email ou senha incorretos!</p>";
+          print "<script>var email = document.getElementById('email');
+    email.classList.add('uk-animation-shake');</script>";
+     print "<script>var senha = document.getElementById('senha');
+    senha.classList.add('uk-animation-shake');</script>";
+    exit();
   }
 
   $user = DBRead('user', "WHERE email = '{$email}' LIMIT 1 ");

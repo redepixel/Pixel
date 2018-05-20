@@ -246,11 +246,13 @@ echo '<script>location.href="/";</script>';
 
 <div class="uk-flex uk-flex-center" style="left: 50px; position: relative;">
 <div class="buttons">
+
     <a class="btn" href="/"><span uk-icon="home"></span></a>
     <a class="btns" uk-tooltip="Publicar uma postagem" href="#publish" uk-toggle><span uk-icon="plus"></span>Nova Postagem</a>
     <a class="btns" href="/profile.php?id=<?php echo $user['id'];?>" uk-tooltip="Meu perfil"><span uk-icon="user"></span>Meu perfil</a>
+            </div>
 </div>
-</div>
+
 
     <div class="uk-flex uk-flex-center">
         <div class="feed uk-animation-slide-top-medium">

@@ -280,8 +280,6 @@ $db=mysql_select_db($dbp, $conn) or die (mysql_error);
                         <?php } else{ ?>
                         <button class="uk-button uk-button-primary" id="addf">Seguir</button>
                         <?php } ?>
-                        <button class="uk-button uk-button-primary"><span uk-icon="warning"></span>       Bloquear</button>
-                        <a href="/stream.php?id=chamada01&what=<?php echo $people['id'];?>"><button class="uk-button uk-button-primary">Chamada conferencia</button></a>
                     <?php } ?>
                     </div>
                 </div>
