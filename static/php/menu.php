@@ -245,7 +245,7 @@ echo '<script>location.href="/";</script>';
 ?>
 
 <div class="uk-flex uk-flex-center" style="left: 50px; position: relative;">
-<div class="buttons">
+<div class="buttons" id="tabs">
 
     <a class="btn" href="/"><span uk-icon="home"></span></a>
     <a class="btns" uk-tooltip="Publicar uma postagem" href="#publish" uk-toggle><span uk-icon="plus"></span>Nova Postagem</a>
@@ -428,8 +428,13 @@ if($user['configurado'] == 0){
 </div>
 
 <div class="tuturial uk-animation-slide-top-medium" id="tuto3">
-    <p>Terminaste o tuturial!</p>
+    <p>Isso aqui é seu acesso rápido.</p>
     <button class="uk-button uk-button-primary" id="click3">Finalizar</button>
+</div>
+
+<div class="tuturial uk-animation-slide-top-medium" id="tuto4">
+    <p>Terminaste o tuturial!</p>
+    <button class="uk-button uk-button-primary" id="click4">Finalizar</button>
 </div>
 
 </div>

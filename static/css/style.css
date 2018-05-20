@@ -814,7 +814,21 @@ html{
 	left: 170px;
 }
 
+#tuto5{
+	display: none;
+	top: 140px;
+	left: 80px;
+	width: 300px;
+}
+
 #tuto3{
+	display: none;
+	top: 110px;
+	left: 80px;
+	width: 300px;
+}
+
+#tuto4{
 	display: none;
 	top: 140px;
 	left: 80px;
