@@ -52,6 +52,8 @@ $form2['admin'] = "0";
 $form2['photo'] = "default.png";
 $form2['capa'] = "4.jpg";
 $form2['background'] = "2.jpg";
+$form2['exp'] = "0";
+$form2['nivel'] = "0";
 $form2['ip']= mysql_real_escape_string($_SERVER['REMOTE_ADDR']);
 
 	if( DBCreate( 'user', $form2 ) ){	

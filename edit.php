@@ -141,6 +141,10 @@ if ($_FILES["file"]["error"]>0) {
                 );
            DBCreate( 'desenhos', $form );
         echo '<script>location.href="/";</script>';
+                $xpadd = array('exp' => $exp['xppor'] + 1);
+        if( DBUpdate( 'user', $xpadd, "id = '{$iduser}'" ) ){
+        echo '';
+        }
 }
 else{
                 $tipos=array(
@@ -157,6 +161,10 @@ $form['destaque'] = 0;
                 $form['sobre'] = $_POST['about'];
 DBCreate( 'desenhos', $form );
 echo '<script>location.href="/";</script>';
+        $xpadd = array('exp' => $exp['xppor'] + 1);
+        if( DBUpdate( 'user', $xpadd, "id = '{$iduser}'" ) ){
+        echo '';
+        }
 }
 
 }

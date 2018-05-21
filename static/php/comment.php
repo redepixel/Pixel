@@ -23,6 +23,10 @@ mysql_query('SET character_set_client=utf8');
 mysql_query('SET character_set_results=utf8');
 
 	if( DBCreate( 'comment', $form2 ) ){
+		$xpadd = array('exp' => $exp['xppor'] + 1);
+		if( DBUpdate( 'user', $xpadd, "id = '{$iduser}'" ) ){
+        echo '';
+        }
 		?>
 
 <?php

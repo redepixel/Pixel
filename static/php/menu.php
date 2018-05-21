@@ -219,6 +219,10 @@ if ($_FILES["file"]["error"]>0) {
                 );
            DBCreate( 'desenhos', $form );
         echo '<script>location.href="/";</script>';
+                $xpadd = array('exp' => $exp['xppor'] + 1);
+        if( DBUpdate( 'user', $xpadd, "id = '{$iduser}'" ) ){
+        echo '';
+        }
 }
 else{
                 $tipos=array(
@@ -235,6 +239,10 @@ $form['destaque'] = 0;
                 $form['sobre'] = $_POST['about'];
 DBCreate( 'desenhos', $form );
 echo '<script>location.href="/";</script>';
+        $xpadd = array('exp' => $exp['xppor'] + 1);
+        if( DBUpdate( 'user', $xpadd, "id = '{$iduser}'" ) ){
+        echo '';
+        }
 }
 
 }
@@ -267,25 +275,25 @@ $hora = date("H");
 if($hora >= 0 and $hora <6){
 ?>
 
-<div style="background-image: url(/img/saudacao/noite.png); background-size: cover; height: 100px; width: 100%;">
+<div style="background-image: url(/img/saudacao/noite.png); background-size: cover; border-radius: 10px; height: 100px; width: 100%;">
     <center><h1 style="color: #fff;padding: 20px">Boa madrugada</h1></center>
 </div>
 <?php } elseif ($hora >= 6 and $hora < 12) {
  ?>
 
-<div style="background-image: url(/img/saudacao/dia.png); background-size: cover; height: 100px; width: 100%;">
+<div style="background-image: url(/img/saudacao/dia.png); background-size: cover; border-radius: 10px; height: 100px; width: 100%;">
     <center><h1 style="color: #fff;padding: 20px">Bom dia</h1></center>
 </div>
 
 <?php } elseif ($hora>= 12 and $hora < 18) {?>
 
-<div style="background-image: url(/img/saudacao/dia.png); background-size: cover; height: 100px; width: 100%;">
+<div style="background-image: url(/img/saudacao/dia.png); background-size: cover; border-radius: 10px; height: 100px; width: 100%;">
     <center><h1 style="color: #fff;padding: 20px">Boa tarde</h1></center>
 </div>
 
 <?php } else {?>
 
-<div style="background-image: url(/img/saudacao/noite.png); background-size: cover; height: 100px; width: 100%;">
+<div style="background-image: url(/img/saudacao/noite.png); background-size: cover; border-radius: 10px; height: 100px; width: 100%;">
     <center><h1 style="color: #fff;padding: 20px">Boa noite</h1></center>
 </div>
 <?php } ?>

@@ -224,6 +224,10 @@ if ($_FILES["file"]["error"]>0) {
                 );
            DBCreate( 'desenhos', $form );
         echo '<script>location.href="/";</script>';
+        $xpadd = array('exp' => $exp['xppor'] + 1);
+        if( DBUpdate( 'user', $xpadd, "id = '{$iduser}'" ) ){
+        echo '';
+        }
 }
 else{
                 $tipos=array(
@@ -256,6 +260,7 @@ echo '<script>location.href="/";</script>';
          <div class="profile">
             <div class="background-cover">
                 <div class="avatar-cover">
+                    <span id="level">Nível <?php echo $people['nivel'];?></span>
                     <?php if($people['admin'] == 1){?>
                      <span id="bolts" uk-tooltip="Admin" uk-icon="bolt">
                     <?php } else { ?>

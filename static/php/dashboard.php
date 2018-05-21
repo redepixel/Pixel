@@ -16,6 +16,7 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
     $usercry = $usercry[0];
     require 'static/php/header.php';
     require 'static/php/menu.php';
+    require 'static/php/exp.php';
     }
   //       if($user['configurado'] == 0){
   //      require 'static/php/configure.php';

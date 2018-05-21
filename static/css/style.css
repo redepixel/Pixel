@@ -939,3 +939,14 @@ body{
 	position: relative;
 	top: 5px;
 }
+
+#level{
+	color: #fff;
+	background: #1e87f0;
+	padding: 6px;
+	border-radius: 5px;
+	float: left;
+	left: 0px;
+	font-size: 18px;
+	position: relative;
+}
