@@ -364,7 +364,7 @@ else
 ?>
 <li>
    
-    <p><a href="/profile.php?id=<?php echo $people['id'];?>">  <img src="img/avatar/<?php echo $people['photo'];?>" style="width: 30px; height: 30px; border-radius: 50%;" alt=""/> Alexandre Silva </a> - <?php echo $coment['texto'];?></p> 
+    <p><a href="/profile.php?id=<?php echo $people['id'];?>">  <img src="img/avatar/<?php echo $people['photo'];?>" style="width: 30px; height: 30px; border-radius: 50%;" alt=""/> <?php echo $people['nome'];?> <?php echo $people['sobrenome'];?> </a> - <?php echo $coment['texto'];?></p> 
 </li>
 <?php endforeach; endforeach;?>
 <hr>
