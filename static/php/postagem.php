@@ -382,18 +382,6 @@ else
 <div id="respostaba"></div>
 
 <script type="text/javascript">
-   $(document).ready(function() {
-    $("#like<?php echo $desenho['id']; ?>").click(function() {
-        var post = <?php echo $desenho['id'] ?>; 
-        $.post("/static/php/react.php", {post: post},
-        function(data){
-         $("#respostaba").html(data);
-         }
-         , "html");
-         return false;
-    });
-});
-
 $(function() {
 $("#nanit").click(function() {
 var textcontent = $("#comment").val();
@@ -421,11 +409,6 @@ $("#content").focus();
 return false;
 });
 });
-
- $('#close').click(function(){
-          msg.style = "display: none;";
-       });
-
 </script>
 
 <?php endforeach; endforeach ; ?>
