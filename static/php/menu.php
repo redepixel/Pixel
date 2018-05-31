@@ -356,6 +356,9 @@ if($hora >= 0 and $hora <6){
 
     <?php endforeach; ?>
              -->
+
+
+<div uk-scrollspy="target: > div; cls:uk-animation-fade; delay: 500">
  <?php
                 $desenhos = DBRead( 'desenhos', "WHERE id ORDER BY id DESC" );
                 if (!$desenhos)
@@ -378,7 +381,7 @@ if($hora >= 0 and $hora <6){
   $totalcurtida = mysql_query("SELECT * FROM pixel_like WHERE idpost = $comentiduser ");
   $totalcurtida = mysql_num_rows($totalcurtida);
                                                      ?>
-<div class="newst">
+<div class="newst" <?php if(empty($desenho['photo'])){ echo ' id="status"';}else{ echo 'id="photo"'; } ?>>
 <article class="uk-comment">
     <header class="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid>
         <div class="uk-width-auto">
@@ -444,7 +447,7 @@ else
 
 
     </div>
-
+</div>
 
 
 
