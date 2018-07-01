@@ -114,7 +114,7 @@
                      <li uk-tooltip="Feito por <?php echo $eudesenhei['nome']; ?> <?php echo $eudesenhei['sobrenome']; ?> <br> <?php echo $desenho['sobre']; ?>  ">
                     <img src="/img/desenhos/<?php echo $desenho['photo'];?>">
                     <div id="bottom-news">
-                         <span uk-tooltip="Ver mais" uk-icon="more" style="color: #555; float: right"></span> 
+                         <a href="/post.php?id=<?php echo $desenho['id'];?>"><span uk-tooltip="Ver mais" uk-icon="more" style="color: #555; float: right"></span></a>
                     </div>
                  </li>
                 <?Php }?>
