@@ -149,7 +149,7 @@ if(isset($_GET['register'])){
 
      <div class="uk-margin uk-animation-slide-bottom-medium uk-animation">
         <div class="uk-inline">
-            <span class="uk-form-icon" uk-icon="icon: user"></span>
+            <span class="uk-form-icon" uk-icon="icon: lock"></span>
             <input class="uk-input" id="pincode" placeholder="Pincode" type="password">
         </div>
     </div>
