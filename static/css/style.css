@@ -22,7 +22,7 @@ body{
 	position: fixed;
 	height: 100%;
 	background-size: cover;
-	background-image: url("/img/background/4.jpg");
+	background-image: url("/img/background/bg-streaming.png");
 	overflow-y: auto;
 }
 
@@ -906,7 +906,6 @@ body{
 	padding: 5px;
 	position: relative;
 	top: -5px;
-	border: 1px solid #1e87f0;
 	border-radius: 10px;
 	outline: none !important;
 	font-size: 17px;
@@ -996,4 +995,9 @@ body{
 	position: absolute;
 	top: 5px;
 	width: 250px;
+	color: #fff;
+}
+
+.serch svg{
+	color: #fff;
 }

@@ -113,8 +113,8 @@ if (!$people){
 <div class="main">
 
 <div id="headerpeople" class="uk-animation-slide-top-medium">
-    <img src="/img/avatar/<?php echo $people['photo'];?>" style="width: 70px; height: 70px; top: 0px; border-radius: 50%; position: relative; left: 0px">
-    <span><?php echo $people['nome'];?> <?php echo $people['sobrenome'];?></span>
+    <img src="/img/avatar/<?php echo $people['photo'];?>" style="width: 50px; height: 50px; top: 10px; border-radius: 50%; position: relative; left: 0px">
+    <span style="position: relative; top: 20px;"><?php echo $people['nome'];?> <?php echo $people['sobrenome'];?></span>
 </div>
 
     <div class="uk-alert-primary uk-animation-slide-top-medium" uk-alert>
@@ -481,7 +481,7 @@ else
 ?>
 <a id="like<?php echo $desenho['id']; ?>"><span id="nani<?php echo $desenho['id']; ?>" class="ativo-like" uk-icon="heart"></span></a>
 <?php endforeach; ?>
-                         <span uk-tooltip="Ver mais" uk-icon="more"></span> 
+                         <a href="/post.php?id=<?php echo $desenho['id']; ?>"><span uk-tooltip="Comentar" uk-icon="comment"></span></a>
         </div>
     </div>
 </article>

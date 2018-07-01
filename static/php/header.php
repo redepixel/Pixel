@@ -49,8 +49,8 @@ if(isset($_COOKIE['iduser']) and (isset($_COOKIE['inisession'])) and (isset($_CO
     <div class="header-align">
         <form class="uk-search uk-search-default" style="position: absolute;">
         <div class="serch">
-        <span uk-search-icon style="position: absolute; top: 20px; z-index: 40;"></span>
-        <input class="uk-search-input" type="search" value="<?php if(isset($_GET['id'])){ echo $people['nome']; echo ' '; echo $people['sobrenome'];}?>" placeholder="Pesquisar..." style="position: absolute; background: #ffecd9;">
+        <span uk-search-icon style="position: absolute; top: 20px; z-index: 40; color: #fff;"></span>
+        <input class="uk-search-input" type="text" value="<?php if(isset($_GET['id'])){if(!$people){ echo ''; } else{echo $people['nome']; echo ' '; echo $people['sobrenome'];} }?>" placeholder="Pesquisar..." style="position: absolute; background: rgba(0, 0, 0, 0.32); border: none; color: #fff;">
         </div>
         </form>
         <center>
